@@ -1,1 +1,11 @@
-<h1>Home Page</h1>
+<section>
+	<div class="sidebar">
+		<div class="header">
+			<p class="title">Chatter</p>
+			<ul class="nav flex-column">
+				<li ng-repeat="room in chatRooms">{{ room.$id }}</li>
+			</ul>
+
+		</div>
+	</div>
+</section>
