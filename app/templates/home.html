@@ -2,8 +2,9 @@
 	<div class="sidebar">
 		<div class="header">
 			<p class="title">Chatter</p>
+			<div ng-controller='ModalCtrl as modal'><button class="btn btn-default" ng-click="modal.open()">Add New Room</button></div>
 			<ul class="nav flex-column">
-				<li ng-repeat="room in chatRooms">{{ room.$id }}</li>
+				<li ng-repeat="room in chatRooms">{{ room.$value }}</li>
 			</ul>
 
 		</div>
