@@ -1,12 +1,26 @@
-<section>
-	<div class="sidebar">
-		<div class="header">
-			<p class="title">Chatter</p>
+<div class ="wrapper">
+
+	<nav id = "sidebar">
+		<div class="sidebar-header">
+			<h3> Chatter</h3>
+		</div>
+			
 			<div ng-controller='ModalCtrl as modal'><button class="btn btn-default" ng-click="modal.open()">Add New Room</button></div>
-			<ul class="nav flex-column">
-				<li ng-repeat="room in chatRooms">{{ room.$value }}</li>
+
+			<ul class="sidebar-nav">
+				<li>
+					<a href="#" ng-repeat="room in rooms"> {{ room.$value }}</a>
+				</li>
 			</ul>
 
+		</nav>
+	<div id = "content">
+		<div class="messages-container">
+			<h3> {{ currentRoom.$value }} </h3>
+			<div ng-repeat="message in messages">
+				{{ message.username }} ({{ message.sentAt }}) <br/>
+				 - {{ message.content }}
+			</div>
 		</div>
 	</div>
-</section>
+</div>
