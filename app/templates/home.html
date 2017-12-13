@@ -9,7 +9,7 @@
 
 			<ul class="sidebar-nav">
 				<li>
-					<a href="#" ng-repeat="room in rooms"> {{ room.$value }}</a>
+					<a href="#" ng-repeat="room in rooms" ng-click="setCurrentRoom(room)"> {{ room.$value }}</a>
 				</li>
 			</ul>
 
