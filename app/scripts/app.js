@@ -16,6 +16,6 @@
      }
      
      angular
-         .module('chatter', ['ui.router', 'firebase', 'ui.bootstrap'])
+         .module('chatter', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
          .config(config);
 })();
