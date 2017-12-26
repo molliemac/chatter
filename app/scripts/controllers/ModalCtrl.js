@@ -1,28 +1,21 @@
 (function() {
-    function ModalCtrl($uibModal, $log, Room) {
+  function ModalCtrl($uibModal, Room) {
 
-    	this.open = function () {
-		    var modalInstance = $uibModal.open({
-		      animation: this.animationsEnabled,
-		      ariaLabelledBy: 'modal-title',
-		      ariaDescribedBy: 'modal-body',
-		      templateUrl: '/templates/modal.html',
-		      controller: 'ModalInstanceCtrl',
-		      controllerAs: 'modal'
-		     
-		    });
+    this.open = function() {
+      var modalInstance = $uibModal.open({
+        templateUrl: '/templates/modal.html',
+        controller: 'ModalInstanceCtrl as modal',
+        size: 'sm'
+      });
 
-	     modalInstance.result.then(function (name) {
-	      this.room = name;
-	      Room.add(this.room);
-	    }, function () {
-	      $log.info('Modal dismissed at: ' + new Date());
-	    });
-	  };
-    	
-    }
+      modalInstance.result.then(function(name) {
+        this.room = name;
+        Room.add(this.room);
+      });
+    };
+  }
 
-    angular
-        .module('chatter')
-        .controller('ModalCtrl', ['$uibModal', '$log', 'Room', ModalCtrl]);
+  angular
+    .module('chatter')
+    .controller('ModalCtrl', ['$uibModal', 'Room', ModalCtrl]);
 })();

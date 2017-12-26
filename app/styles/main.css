@@ -1,67 +1,102 @@
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
-}
-
-.wrapper {
-    display: flex;
-    align-items: stretch;
+.home-view {
+  height: 100%;
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+  float: left;
+  width: 25%;
+  background-color: #dedede;
+  padding: 35px;
+  margin-right: 35px;
+  min-height: 100%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
-#sidebar.active {
-    margin-left: -250px;
+h1.sidebar-title {
+  font-size: 2em;
+  color: #4a4a4a;
+  margin-top: 0;
+  margin-bottom: 0;
+  float: left;
+  margin-right: 20px;
 }
 
-a, a:hover, a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
+h3.sidebar-room {
+  font-size: 1.15em;
+  color: #979797;
+  margin: 0 0 0.85em 0;
+  display: inline-block;
 }
 
-#sidebar {
-    /* don't forget to add all the previously mentioned styles here too */
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
+.sidebar-btn-add {
+  color: #979797;
+  background-color: #fbfcfe;
 }
 
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+.room-list {
+  margin-top: 1.5em;
 }
 
-#sidebar ul {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+[ng-click] {
+  cursor: pointer;
 }
 
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
+#chat-room {
+  height: 100%;
+  overflow-y: scroll;
 }
 
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-#sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+.intro {
+  padding: 35px 35px 35px 0;
+  text-align: center;
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+h1.active-room-title {
+  margin-top: 0px;
+  position: fixed;
+  top: 0;
+  padding: 35px 0;
+  background-color: #fff;
+  width: 100%;
 }
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
+
+#messages {
+  padding: 100px 35px 100px 0;
+}
+
+.chat-note {
+  font-size: x-small;
+  font-style: italic;
+  color: #dedede;
+  padding: 5px 0;
+}
+
+.chat-beginning {
+  border-bottom: 1px solid #dedede;
+}
+
+.chat-end {
+  border-top: 1px solid #dedede;
+}
+
+.message {
+  padding: 10px;
+}
+
+.message-username {
+  font-weight: bold;
+  padding-right: 15px;
+}
+
+.message-time {
+  font-size: x-small;
+  color: #979797;
+}
+
+#new-message {
+  position: fixed;
+  bottom: 0;
+  padding: 35px 35px 35px 0;
+  background-color: #fff;
 }
