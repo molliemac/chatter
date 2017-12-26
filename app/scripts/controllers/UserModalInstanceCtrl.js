@@ -1,16 +1,20 @@
 (function() {
-    function UserModalInstanceCtrl($uibModalInstance, $cookies) {
+    function UserModalInstanceCtrl($scope, $uibModalInstance, $cookies) {
 
-    	this.ok = function () {
-    		$cookies.put('chatCurrentUser', this.username);
-            console.log("You just created a new user: " + this.username);
+        this.ok = function () {
+            $cookies.put('chatCurrentUser', this.name);
+
+            console.log("You just created a new user: " + this.name);
             console.log("You just created a new cookie: " + $cookies.chatCurrentUser);
-            $uibModalInstance.close($cookies.chatCurrentUser);
-        };
-	
+
+            $uibModalInstance.close(this.name);
+
+            };
+
+        
     }
 
     angular
         .module('chatter')
-        .controller('UserModalInstanceCtrl', ['$cookies', '$uibModalInstance', UserModalInstanceCtrl]);
+        .controller('UserModalInstanceCtrl', ['$scope', '$uibModalInstance', '$cookies', UserModalInstanceCtrl]);
 })();

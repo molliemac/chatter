@@ -4,7 +4,8 @@
     if (!currentUser || currentUser === '') {
       $uibModal.open({
         templateUrl: '/templates/usernamemodal.html',
-        controller: 'UserModalInstanceCtrl as username',
+        controller: 'UserModalInstanceCtrl',
+        controllerAs: 'usermodal',
         size: 'sm',
         backdrop: 'static',
         keyboard: false
